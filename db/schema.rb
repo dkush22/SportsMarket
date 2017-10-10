@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20171009174943) do
     t.integer "rushing_touchdowns", default: 0
     t.integer "receiving_yards", default: 0
     t.integer "receiving_touchdowns", default: 0
-    t.integer "stock_value", default: 100
-    t.integer "fantasy_projection", default: 0
-    t.integer "actual_fantasy_value", default: 0
+    t.float "stock_value", default: 100.0
+    t.float "fantasy_projection", default: 0.0
+    t.float "actual_fantasy_value", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
