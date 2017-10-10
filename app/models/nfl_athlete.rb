@@ -1,0 +1,2 @@
+class NFLAthlete < ApplicationRecord
+end
