@@ -1,15 +1,12 @@
 class NflAthletesController < ApplicationController
 
-require 'rest-client'
-
-
-
 def index
-
-response = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/cumulative_player_stats.json?playerstats=Att,Comp,Yds,TD&position=qb', user: 'dkush22', password: 'dkush22'
-render json: response
+	@players = NflAthlete.all
+	render json: @players.sort_by {|player| player.initial_stock_value}.reverse!, status: 200
 end
 
-
-
+def show
+	@player = NflAthlete.find(params[:id])
+	render json: @player, status: 200
+end
 end
