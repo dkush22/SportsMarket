@@ -6,7 +6,11 @@ def index
 end
 
 def show
-	@player = NflAthlete.find(params[:id])
+	@player = NflAthlete.find_by(name: params[:name])
 	render json: @player, status: 200
 end
+
+
+
+
 end
