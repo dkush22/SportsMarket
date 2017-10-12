@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20171009174943) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.integer "budget", default: 10000
+    t.float "budget", default: 10000.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

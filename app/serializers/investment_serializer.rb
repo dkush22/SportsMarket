@@ -1,5 +1,5 @@
 class InvestmentSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :nfl_athlete_id, :quantity
+ attributes :id, :user_id, :nfl_athlete_id, :quantity
 
 
  belongs_to :user

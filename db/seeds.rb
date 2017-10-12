@@ -2,7 +2,6 @@
 
 User.create(username: "dkush22", password: "test", budget: 10000)
 User.create(username: "roman", password: "test")
-Investment.create(user_id: 1, nfl_athlete_id: 754, quantity: 2)
 
 
 
@@ -27,6 +26,10 @@ nflplayer.update(initial_stock_value: (player["FantasyPointsYahoo"] / 4), curren
 nflplayer.save
 end
 end
+
+Investment.create(user_id: 1, nfl_athlete_id: 754, quantity: 2)
+Investment.create(user_id: 2, nfl_athlete_id: 754, quantity: 5)
+Investment.create(user_id: 1, nfl_athlete_id: 713, quantity: 3)
 
 
 # user = User.find_by(username: "romanfsiohfsoi")
