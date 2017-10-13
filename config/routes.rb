@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   post '/login', to: 'auth#create'
   post '/signup', to: 'users#new'
+  get '/welcome', to: 'application#welcome'
   resources :nfl_athletes, only: [:index]
   resources :users, :investments
 end
