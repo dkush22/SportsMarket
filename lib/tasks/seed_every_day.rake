@@ -1,6 +1,6 @@
 namespace :db do
-	desc 'Say hello!'
-task :seed_every_day do
-  puts "Hello"
+	desc "reseed the database"
+task reseed: ['db:drop', 'db:create', 'db:migrate', 'db:seed'] do
+  puts "Reseeding Complete"
 end
 end

@@ -4,7 +4,7 @@ class CreateInvestments < ActiveRecord::Migration[5.1]
     	t.integer :user_id
     	t.integer :nfl_athlete_id
     	t.integer :quantity
-
+    	t.float :acquisition_price
       t.timestamps
     end
   end

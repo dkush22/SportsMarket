@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20171009174943) do
     t.integer "user_id"
     t.integer "nfl_athlete_id"
     t.integer "quantity"
+    t.float "acquisition_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

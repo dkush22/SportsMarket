@@ -5,7 +5,7 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -18,8 +18,10 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+set :output, "log/cron_log.log"
+set :environment, "development"
+env :MAILTO, ""
 
-every 10.days do
-runner "app/controller/test.rb"
-rake "db:seed_every_day"
+every 2.days do
+rake "db:reseed"
 end
