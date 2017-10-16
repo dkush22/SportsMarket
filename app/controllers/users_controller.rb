@@ -29,6 +29,10 @@ def new
   end
 end
 
+def google
+  puts "hello"
+end
+
 
 
 def me
