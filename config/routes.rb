@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   post '/signup', to: 'users#new'
   post '/newinvestment', to: 'investments#create'
+  delete '/deleteinvstment', to: 'investments#delete'
   get '/welcome', to: 'application#welcome'
   resources :nfl_athletes, only: [:index]
   resources :users, :investments
