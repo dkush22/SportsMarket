@@ -22,6 +22,6 @@ set :output, "log/cron_log.log"
 set :environment, "development"
 env :MAILTO, ""
 
-every 2.days do
+every 100.days do
 rake "db:reseed"
 end

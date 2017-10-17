@@ -19,11 +19,11 @@ def create
   end
 end
 
-def delete
-@investment = Investment.where(user_id: params[:user_id])
-@further = @investment.where(nfl_athlete_id: params[:nfl_athlete_d])
-Investment.destroy(@futher[0].id)
-
+def destroy
+@investment = Investment.find_by(user_id: params[:user_id], nfl_athlete_id: params[:nfl_athlete_id])
+@investment.user.update(budget: @investment.user.budget + (@investment.nfl_athlete.current_stock_value * @investment.quantity))
+@investment.destroy
+render json: @investment
 end
 
 
