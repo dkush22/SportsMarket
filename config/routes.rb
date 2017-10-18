@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/newinvestment', to: 'investments#create'
   delete '/deleteinvestment', to: 'investments#destroy'
   get '/welcome', to: 'application#welcome'
+  patch '/investments', to: 'investments#update'
   resources :nfl_athletes, only: [:index]
   resources :users, :investments
 end
