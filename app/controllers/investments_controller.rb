@@ -21,7 +21,7 @@ end
 
 def update
 	@investment = Investment.find(params[:id])
-	@investment.quantity = params[:quantity]
+	@investment.quantity -= params[:quantity]
 	if @investment.update(investment_params)
 		render json: {investment: @investment, user_id: @investment.user_id, nfl_athlete_id: @investment.nfl_athlete_id, quantity: @investment.quantity, acquisition_price: @investment.acquisition_price}
 	end
