@@ -3,7 +3,7 @@ class InvestmentsController < ApplicationController
 
 def index
 	@investments = Investment.all
-	render json: @investments, status: 200
+	render json: @investments.sort_by {|investment| investment.id}, status: 200
 end
 
 def show

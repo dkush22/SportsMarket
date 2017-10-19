@@ -22,6 +22,6 @@ set :output, "log/cron_log.log"
 set :environment, "development"
 env :MAILTO, ""
 
-every 100.days do
-rake "db:reseed"
+every 4.hours do
+runner "NflAthlete.midnight_task"
 end
