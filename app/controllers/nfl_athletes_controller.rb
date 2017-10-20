@@ -2,7 +2,8 @@ class NflAthletesController < ApplicationController
 
 def index
 	@players = NflAthlete.all
-	render json: @players.sort_by {|player| player.initial_stock_value}.reverse![0..400], status: 200
+	filtered_players = @players.select { |x| x.current_stock_value > 0 }
+	render json: filtered_players.sort_by {|player| player.current_stock_value}.reverse![0..400], status: 200
 end
 
 def show

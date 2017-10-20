@@ -10,7 +10,6 @@ response = RestClient::Request.execute method: :get, url: 'https://api.mysportsf
 
 nfl_data = JSON.parse(response)
 
-
 nfl_data["cumulativeplayerstats"]["playerstatsentry"].each do |item|
 	nflPlayer = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
 	if nflPlayer

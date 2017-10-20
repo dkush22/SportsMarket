@@ -13,9 +13,12 @@ end
 
 def create
   @investment = Investment.new(user_id: params[:user_id], nfl_athlete_id: params[:nfl_athlete_id], quantity: params[:quantity], acquisition_price: params[:acquisition_price])
-  @investment.user.update(budget: @investment.user.budget - (@investment.nfl_athlete.current_stock_value * @investment.quantity))
-  if @investment.save
+  @investment.user.budget = (@investment.user.budget - (@investment.nfl_athlete.current_stock_value * @investment.quantity))
+  if @investment.user.valid?
+  	@investment.save
+  	@investment.user.save
     render json: {investment: @investment, user_id: @investment.user_id, nfl_athlete_id: @investment.nfl_athlete_id, quantity: @investment.quantity, acquisition_price: @investment.acquisition_price}
+else render json: {message: "You can't go below $0"}
   end
 end
 

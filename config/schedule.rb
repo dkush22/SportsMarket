@@ -22,6 +22,6 @@ set :output, "log/cron_log.log"
 set :environment, "development"
 env :MAILTO, ""
 
-every 4.hours do
+every 2.hours do
 runner "NflAthlete.midnight_task"
 end
