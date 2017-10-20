@@ -23,7 +23,7 @@ else render json: {message: "You can't go below $0"}
 end
 
 def update
-	@investment = Investment.find_by(user_id: params[:user_id], nfl_athlete_id: params[:nfl_athlete_id])
+	@investment = Investment.find(params[:id])
 	@investment.quantity -= params[:quantity]
 	if @investment.update(quantity: @investment.quantity)
 		@investment.user.update(budget: @investment.user.budget + (@investment.nfl_athlete.current_stock_value * params[:quantity]))
