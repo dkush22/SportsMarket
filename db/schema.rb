@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171009174943) do
+ActiveRecord::Schema.define(version: 20171023222246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,23 @@ ActiveRecord::Schema.define(version: 20171009174943) do
     t.float "actual_fantasy_value", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "week_one", default: 0.0
+    t.float "week_two", default: 0.0
+    t.float "week_three", default: 0.0
+    t.float "week_four", default: 0.0
+    t.float "week_five", default: 0.0
+    t.float "week_six", default: 0.0
+    t.float "week_seven", default: 0.0
+    t.float "week_eight", default: 0.0
+    t.float "week_nine", default: 0.0
+    t.float "week_ten", default: 0.0
+    t.float "week_eleven", default: 0.0
+    t.float "week_twelve", default: 0.0
+    t.float "week_thirteen", default: 0.0
+    t.float "week_fourteen", default: 0.0
+    t.float "week_fifteen", default: 0.0
+    t.float "week_sixteen", default: 0.0
+    t.float "week_seventeen", default: 0.0
   end
 
   create_table "users", force: :cascade do |t|
