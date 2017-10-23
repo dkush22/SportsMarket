@@ -22,7 +22,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 
 gem 'whenever', '~> 0.9.4', :require => false
-
+gem 'newrelic_rpm'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

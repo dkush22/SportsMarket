@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 
 def index
 	@users = User.all
-	render json: @users, status: 200
+  @users_sorted = @users.sort_by {|user| user.id}
+	render json: @users_sorted, status: 200
 end
 
 def show
