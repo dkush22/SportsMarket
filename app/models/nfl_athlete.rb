@@ -299,5 +299,195 @@ end
 end
 end
 
+def self.weekly_stats_eight
+response_thursday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171026&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_thursday = JSON.parse(response_thursday)
+
+nfl_data_thursday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerThursday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerThursday
+nflPlayerThursday.update(week_eight: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerThursday.save
+end
+end
+
+response_sunday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171029&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_sunday = JSON.parse(response_sunday)
+
+nfl_data_sunday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerSunday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerSunday
+nflPlayerSunday.update(week_eight: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerSunday.save
+end
+end
+
+response_monday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171030&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_monday = JSON.parse(response_monday)
+
+nfl_data_monday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerMonday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerMonday
+nflPlayerMonday.update(week_eight: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerMonday.save
+end
+end
+end
+
+def self.weekly_stats_nine
+response_thursday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171102&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_thursday = JSON.parse(response_thursday)
+
+nfl_data_thursday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerThursday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerThursday
+nflPlayerThursday.update(week_nine: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerThursday.save
+end
+end
+
+response_sunday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171105&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_sunday = JSON.parse(response_sunday)
+
+nfl_data_sunday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerSunday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerSunday
+nflPlayerSunday.update(week_nine: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerSunday.save
+end
+end
+
+response_monday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171106&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_monday = JSON.parse(response_monday)
+
+nfl_data_monday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerMonday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerMonday
+nflPlayerMonday.update(week_nine: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerMonday.save
+end
+end
+end
+
+def self.weekly_stats_ten
+response_thursday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171109&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_thursday = JSON.parse(response_thursday)
+
+nfl_data_thursday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerThursday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerThursday
+nflPlayerThursday.update(week_ten: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerThursday.save
+end
+end
+
+response_sunday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171112&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_sunday = JSON.parse(response_sunday)
+
+nfl_data_sunday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerSunday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerSunday
+nflPlayerSunday.update(week_ten: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerSunday.save
+end
+end
+
+response_monday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171113&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_monday = JSON.parse(response_monday)
+
+nfl_data_monday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerMonday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerMonday
+nflPlayerMonday.update(week_ten: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerMonday.save
+end
+end
+end
+
+def self.weekly_stats_eleven
+response_thursday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171116&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_thursday = JSON.parse(response_thursday)
+
+nfl_data_thursday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerThursday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerThursday
+nflPlayerThursday.update(week_eleven: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerThursday.save
+end
+end
+
+response_sunday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171118&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_sunday = JSON.parse(response_sunday)
+
+nfl_data_sunday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerSunday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerSunday
+nflPlayerSunday.update(week_eleven: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerSunday.save
+end
+end
+
+response_monday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171119&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_monday = JSON.parse(response_monday)
+
+nfl_data_monday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerMonday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerMonday
+nflPlayerMonday.update(week_eleven: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerMonday.save
+end
+end
+end
+
+def self.weekly_stats_twelve
+response_thursday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171123&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_thursday = JSON.parse(response_thursday)
+
+nfl_data_thursday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerThursday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerThursday
+nflPlayerThursday.update(week_twelve: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerThursday.save
+end
+end
+
+response_sunday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171125&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_sunday = JSON.parse(response_sunday)
+
+nfl_data_sunday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerSunday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerSunday
+nflPlayerSunday.update(week_twelve: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerSunday.save
+end
+end
+
+response_monday = RestClient::Request.execute method: :get, url: 'https://api.mysportsfeeds.com/v1.1/pull/nfl/2017-regular/daily_player_stats.json?fordate=20171126&playerstats=Att,Comp,Yds,TD&position=qb,rb,wr,te', user: 'dkush22', password: 'dkush22'
+
+nfl_data_monday = JSON.parse(response_monday)
+
+nfl_data_monday["dailyplayerstats"]["playerstatsentry"].each do |item|
+nflPlayerMonday = NflAthlete.find_by(name: item["player"]["FirstName"] + " " + item["player"]["LastName"])
+if nflPlayerMonday
+nflPlayerMonday.update(week_twelve: ((item["stats"]["PassYards"]["#text"].to_f * 0.04).to_f + (item["stats"]["PassTD"]["#text"].to_f * 4).to_f + (item["stats"]["RushYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RushTD"]["#text"].to_f * 6).to_f + (item["stats"]["RecYards"]["#text"].to_f * 0.1).to_f + (item["stats"]["RecTD"]["#text"].to_f * 6)))	
+nflPlayerMonday.save
+end
+end
+end
+
 
 end
